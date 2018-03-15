@@ -25,6 +25,7 @@
     </div>
     <div class="main">
     <div class="index_content">
+       <div class="content">
       <div class="index_lunbo">
         <!--轮播-->
       <div class="swiper-container">
@@ -106,29 +107,313 @@
         </ul>
       </div>
       </div>
-      <div class="crazy_buy">
+        <div class="crazy_buy">
         <div class="crazy_img">
           <img src="./images/crazy.jpg" alt="">
-        </div>
+           </div>
+
          <div class="crazy_item">
-           <img src="./images/crazy_one.png" alt="">
+           <img src="./images/crazy_one.png" alt="" width="85">
            <div class="crazy_center">
+              <div class="one">
              <span>本场结束</span>
               <span>时间显示</span>
-           </div>
+              </div>
+
            <div class="more">
              <span>更多</span>
-             <span class="iconfont icon-jiantou">//</span>
+             <span class="iconfont icon-xinxi"></span>
+           </div>
+           </div>
+         </div>
+          <div class="crazy_content  ">
+            <ul>
+              <li class="content_imgs">
+                <a href="javascript:;">
+                  <span><img src="./images/f.jpg" alt="" class="img_li"></span>
+                  <div>¥4.8</div>
+                  <div>省¥43.2</div>
+              </a></li>
+              <li class="content_imgs">
+                <a href="javascript:;">
+                  <span><img src="./images/f.jpg" alt="" class="img_li"></span>
+                  <div>¥4.8</div>
+                  <div>省¥43.2</div>
+                </a></li>
+              <li class="content_imgs">
+                <a href="javascript:;">
+                  <span><img src="./images/f.jpg" alt="" class="img_li"></span>
+                  <div>¥4.8</div>
+                  <div>省¥43.2</div>
+                </a></li>
+              <li class="content_imgs">
+                <a href="javascript:;">
+                  <span><img src="./images/f.jpg" alt="" class="img_li"></span>
+                  <div>¥4.8</div>
+                  <div>省¥43.2</div>
+                </a></li>
+              <li class="content_imgs">
+                <a href="javascript:;">
+                  <span><img src="./images/f.jpg" alt="" class="img_li"></span>
+                  <div>¥4.8</div>
+                  <div>省¥43.2</div>
+                </a></li>
+              <li class="content_imgs">
+                <a href="javascript:;">
+                  <span><img src="./images/f.jpg" alt="" class="img_li"></span>
+                  <div>¥4.8</div>
+                  <div>省¥43.2</div>
+                </a></li>
+              <li class="content_imgs">
+                <a href="javascript:;">
+                  <span><img src="./images/f.jpg" alt="" class="img_li"></span>
+                  <div>¥4.8</div>
+                  <div>省¥43.2</div>
+                </a></li>
+              <li class="content_imgs">
+                <a href="javascript:;">
+                  <span><img src="./images/f.jpg" alt="" class="img_li"></span>
+                  <div>¥4.8</div>
+                  <div>省¥43.2</div>
+                </a></li>
 
+            </ul>
+          </div>
+        </div>
+        <div class="fuwu">
+             <div class="fuwu_img">
+               <img src="./images/crazy.jpg" alt="">
+             </div>
+             <div class="fuwu_gif">
+               <img src="./images/g.gif" alt="">
+             </div>
+
+           </div>
+         <div class="zunxi">
+           <div class="zunxi_img">
+             <img src="./images/crazy.jpg" alt="">
+           </div>
+           <div class="zunxi_nav">
+             <ul>
+               <li>
+                 <a href="javascript:;">
+                   <img src="./images/h.jpg" alt="">
+                 </a>
+               </li>
+               <li>
+                 <a href="javascript:;">
+                   <img src="./images/h.jpg" alt="">
+                 </a>
+               </li>
+               <li>
+                 <a href="javascript:;">
+                   <img src="./images/h.jpg" alt="">
+                 </a>
+               </li>
+               <li>
+                 <a href="javascript:;">
+                   <img src="./images/h.jpg" alt="">
+                 </a>
+               </li>
+
+             </ul>
            </div>
 
          </div>
+         <div class="dapai">
+           <div class="dapai_img">
+             <img src="./images/crazy.jpg" alt="">
+           </div>
+           <div class="swiper-container">
+             <div class="swiper-wrapper">
+               <div class="swiper-slide">
+                 <a href="javascript:;">
+                   <img src="./images/lunbo/baolu.jpg" alt="">
+                 </a>
+               </div>
+               <div class="swiper-slide">
+                 <a href="javascript:;">
+                   <img src="./images/lunbo/tongzhi.jpg" alt="">
+                 </a>
+               </div>
+               <div class="swiper-slide">
+                 <a href="javascript:;">
+                   <img src="./images/lunbo/baolu.jpg" alt="">
+                 </a>
+               </div>
+               <div class="swiper-slide">
+                 <a href="javascript:;">
+                   <img src="./images/lunbo/tongzhi.jpg" alt="">
+                 </a>
+               </div>
+             </div>
+             <div class="swiper-pagination"></div>
+           </div>
+         </div>
+         <div class="haohuo">
+           <div class="haohuo_img">
+             <img src="./images/crazy.jpg" alt="">
+           </div>
+            <ul class="haohuo_nav">
+              <li>
+                <a href="javascript">
+                <img src="./images/j.jpg" alt="">
+                </a>
+              </li>
+              <li>
+                <a href="javascript">
+                <img src="./images/j.jpg" alt="">
+                </a>
+              </li>
+              <li>
+                <a href="javascript">
+                <img src="./images/j.jpg" alt="">
+                </a>
+              </li>
+              <li>
+                <a href="javascript">
+                <img src="./images/j.jpg" alt="">
+                </a>
+              </li>
+              <li>
+                <a href="javascript">
+                <img src="./images/j.jpg" alt="">
+                </a>
+              </li>
+              <li>
+                <a href="javascript">
+                <img src="./images/j.jpg" alt="">
+                </a>
+              </li>
+              <li>
+                <a href="javascript">
+                <img src="./images/j.jpg" alt="">
+                </a>
+              </li>
+              <li>
+                <a href="javascript">
+                <img src="./images/j.jpg" alt="">
+                </a>
+              </li>
+              <li>
+                <a href="javascript">
+                <img src="./images/j.jpg" alt="">
+                </a>
+              </li>
+              <li>
+                <a href="javascript">
+                <img src="./images/j.jpg" alt="">
+                </a>
+              </li>
+              <li>
+                <a href="javascript">
+                <img src="./images/j.jpg" alt="">
+                </a>
+              </li>
+              <li>
+                <a href="javascript">
+                <img src="./images/j.jpg" alt="">
+                </a>
+              </li>
+              <li>
+                <a href="javascript">
+                <img src="./images/j.jpg" alt="">
+                </a>
+              </li>
+              <li>
+                <a href="javascript">
+                <img src="./images/j.jpg" alt="">
+                </a>
+              </li>
+            </ul>
+
+         </div>
+         <div class="badgod">
+            <div class="badgod_img">
+              <a href="javascript">
+                <img src="./images/crazy.jpg" alt="">
+              </a>
+            </div>
+             <div class="badgod_img2">
+               <a href="javascript:;">
+                 <img src="./images/k.jpg" alt="">
+               </a>
+             </div>
+
+         </div>
+         <div class="global">
+           <div class="global_img">
+             <a href="javascript:;">
+               <img src="./images/crazy.jpg" alt="">
+             </a>
+           </div>
+            <div class="gloal_nav">
+               <div class="gloal_nav_img1">
+                 <img src="./images/w.jpg" alt="">
+               </div>
+                <div class="gloal_nav_right">
+                 <div class="gloal_img_right_1">
+                   <img src="./images/s.jpg" alt="">
+                 </div>
+                  <div class="gloal_img_right_1">
+                    <img src="./images/s.jpg" alt="">
+                  </div>
+                </div>
+            </div>
+         </div>
+         <div class="tese">
+           <div class="tese_img">
+             <img src="./images/crazy.jpg" alt="">
+           </div>
+            <ul class="test_nav">
+              <li>
+                <a href="javascript:;">
+                  <img src="./images/q.jpg" alt="">
+                </a>
+              </li>
+              <li>
+                <a href="javascript:;">
+                  <img src="./images/q.jpg" alt="">
+                </a>
+              </li>
+              <li>
+                <a href="javascript:;">
+                  <img src="./images/q.jpg" alt="">
+                </a>
+              </li>
+              <li>
+                <a href="javascript:;">
+                  <img src="./images/q.jpg" alt="">
+                </a>
+              </li>
+              <li>
+                <a href="javascript:;">
+                  <img src="./images/q.jpg" alt="">
+                </a>
+              </li>
+              <li>
+                <a href="javascript:;">
+                  <img src="./images/q.jpg" alt="">
+                </a>
+              </li>
+            </ul>
+         </div>
+          <div class="footer_desc">
+            <div class="footer_desc1">
+              <a href="javascript:;" class="on">触屏版</a>
+              <a href="javascript:;">手机客户端</a>
+              <a href="javascript:;">关于我们</a>
+              <a href="javascript:;">联系我们</a>
+            </div>
+            <div class="footer_desc2"> wap.epet.com 版权:重庆易宠科技有限公司</div>
+          </div>
 
       </div>
       </div>
     </div>
+    </div>
 
-  </div>
+
 </template>
 <script>
   import Swiper from 'swiper'
@@ -164,8 +449,16 @@
       }else{
         this.scroll.refresh()
       }
+      if(!this.scroll3){
+        this.scroll3 =  new BScroll('.crazy_content',{
+          click :true,
+          scrollX :true,
+          probeType:2
 
-
+        })
+      }else{
+        this.scroll3.refresh()
+      }
 
 
     }
@@ -182,6 +475,8 @@
       left 0
       right 0
       top 0
+      z-index 100
+      background-color #fff
       .index_mian
         .index_input
           display flex
@@ -225,56 +520,190 @@
 
 
     .main
-      position  absolute
-      left 0
-      right 0
-      top 78px
-      bottom 0
+      height 100%
+      width 100%
       .index_content
-         height 100%
-         width 100%
-         .index_lunbo
-          .swiper-container
-            width 100%
-            .swiper-wrapper
+         position  absolute
+         left 0
+         right 0
+         top 78px
+         bottom 50px
+         .content
+           .index_lunbo
+            .swiper-container
               width 100%
-              .swiper-slide
+              .swiper-wrapper
                 width 100%
+                .swiper-slide
+                  width 100%
+                  >a
+                    >img
+                      width 100%
+                      display block
+            .lunbo_center
+              img
+                width 100%
+                display block
+            .index_nav
+              width 100%
+            .index_ul
+              width 100%
+              overflow hidden
+              >li
+                width 20%
+                float left
                 >a
                   >img
                     width 100%
                     display block
-          .lunbo_center
-            img
+           .crazy_buy
+              .crazy_img
+                >img
+                 width 100%
+               .crazy_item
+                 display flex
+                 justify-content space-between
+                 align-items center
+                 font-size 12px
+                 padding 5px
+                 box-sizing content-box
+                 .crazy_center
+                   width 50%
+                   display flex
+                   justify-content space-around
+                   align-items center
+
+
+               .crazy_content
+                  width 100%
+                  >ul
+                    width 200%
+                    overflow hidden
+                    .content_imgs
+                       width 12.5%
+                       float left
+                       text-align center
+                       font-size 12px
+                       .img_li
+                        width 100%
+
+
+
+
+
+           .fuwu
+             margin-top 10px
+             img
               width 100%
               display block
-          .index_nav
-            width 100%
-          .index_ul
-            width 100%
-            overflow hidden
-            >li
-              width 20%
-              float left
-              >a
+
+           .zunxi
+              width 100%
+              .zunxi_img
+                >img
+                  width 100%
+
+              .zunxi_nav
+                >ul
+                  overflow hidden
+                  width 100%
+                  >li
+                    width 50%
+                    float left
+                    >a
+                     >img
+                       width 100%
+           .dapai
+              width 100%
+              .dapai_img
                 >img
                   width 100%
                   display block
-
-
-         .crazy_buy
-           img
-            width 100%
-           .crazy_item
-             display flex
-             justify-content space-between
-             align-items center
+              .swiper-container
+                width 100%
+                .swiper-wrapper
+                  width 100%
+                  .swiper-slide
+                    width 100%
+                    >a
+                      >img
+                        width 100%
+                        display block
+           .haohuo
+             .haohuo_img
+               >img
+                 width 100%
+                 display block
+             .haohuo_nav
+               overflow hidden
+               >li
+                float left
+                width 50%
+                >a
+                 >img
+                   width 100%
+                   display block
+           .badgod
              width 100%
+             .badgod_img
+               img
+                width 100%
+                display block
+             .badgod_img2
+               img
+                 width 100%
+                 display block
+           .global
+             width 100%
+             .global_img
+               width 100%
+               >a
+                >img
+                  width 100%
+                  display block
+             .gloal_nav
+               width 100%
+               overflow hidden
+               .gloal_nav_img1
+                 float left
+                 width 50%
+                 >img
+                   width 100%
+                   display block
+               .gloal_nav_right
+                 width 50%
+                 float right
+                 .gloal_img_right_1
+                  >img
+                    width 100%
+                    display block
+           .tese
+             width 100%
+             .tese_img
+              >img
+               width 100%
+               display block
 
-
-
-
-
-
+             .test_nav
+                overflow hidden
+                >li
+                  width 50%
+                  float left
+                  >a
+                    >img
+                      width 100%
+                      display block
+           .footer_desc
+                 text-align center
+                 padding 20px
+                 .footer_desc1
+                   margin 10px
+                   font-size 14px
+                   a
+                     color #333333
+                   .on
+                      color red
+                 .footer_desc2
+                    font-size 12px
 
 </style>

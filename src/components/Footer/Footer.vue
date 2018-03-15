@@ -3,25 +3,25 @@
   <footer class="footer_guide border-1px">
     <span class="guide_item " :class="{on:$route.path=='/msite'}" @click="goto('/msite')">
       <span class="item_icon">
-        <i class="iconfont icon-waimai"></i>
+        <i class="iconfont icon-zhuye"></i>
       </span>
       <span>首页</span>
     </span>
     <span class="guide_item" :class="{on:$route.path=='/search'}" @click="goto('/search')" >
       <span class="item_icon">
-        <i class="iconfont icon-search"></i>
+        <i class="iconfont icon-sousuo"></i>
       </span>
       <span>搜索</span>
     </span>
     <span class="guide_item" :class="{on:$route.path=='/gshop'}" @click="goto('/gshop')">
       <span class="item_icon">
-        <i class="iconfont icon-dingdan"></i>
+        <i class="iconfont icon-gouwuche2"></i>
       </span>
       <span>购物车</span>
     </span>
     <span class="guide_item" :class="{on:$route.path=='/emine'} "@click="goto('/emine')">
       <span class="item_icon">
-        <i class="iconfont icon-geren"></i>
+        <i class="iconfont icon-xiaolian"></i>
       </span>
       <span>我的E宠</span>
     </span>
