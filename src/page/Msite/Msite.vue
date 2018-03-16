@@ -1,414 +1,87 @@
 <template>
-  <div class="indexbox">
-    <div class="index_header">
-      <div class="index_mian">
-        <div class="index_input">
+  <div class="indexbox" >
+    <div >
+      <div class="index_header">
+        <div class="index_mian">
+          <div class="index_input">
               <span class="index_one">
              <span class="categorys">狗狗</span>| <span class="address" >重庆</span>
              <span class="iconfont icon-xiala"></span>
               </span>
-          <input type="text" placeholder="搜索商品和品牌" class="index_input_search">
-          <span class="iconfont icon-duanxin"></span>
-        </div>
-        <div class="index_search">
-          <ul class="index_list">
-            <li ><a href="javascript:;" class="on">首页</a></li>
-            <li><a href="javascript:;">猫猫主粮</a></li>
-            <li><a href="javascript:;">罐头超市</a></li>
-            <li><a href="javascript:;">猫砂</a></li>
-            <li><a href="javascript:;">医疗保健</a></li>
-             <li><a href="javascript:;">美容香波</a></li>
-             <li><a href="javascript:;">零食玩具</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="main">
-    <div class="index_content">
-       <div class="content">
-      <div class="index_lunbo">
-        <!--轮播-->
-      <div class="swiper-container">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-          <a href="javascript:;">
-            <img src="./images/lunbo/baolu.jpg" alt="">
-          </a>
+            <input type="text" placeholder="搜索商品和品牌" class="index_input_search">
+            <span class="iconfont icon-duanxin"></span>
           </div>
-          <div class="swiper-slide">
-            <a href="javascript:;">
-              <img src="./images/lunbo/tongzhi.jpg" alt="">
-            </a>
-          </div>
-          <div class="swiper-slide">
-            <a href="javascript:;">
-              <img src="./images/lunbo/baolu.jpg" alt="">
-            </a>
-          </div>
-          <div class="swiper-slide">
-            <a href="javascript:;">
-              <img src="./images/lunbo/tongzhi.jpg" alt="">
-            </a>
+          <div class="index_search">
+            <ul class="index_list" v-if="menus.data">
+              <li v-for="(menu,index) in menus.data" :key="index" @cilck="high11(index)">
+                <a href="javascript:;" :class="{on:num === index}" >{{menu.menu_name}}</a>
+              </li>
+            </ul>
           </div>
         </div>
-        <div class="swiper-pagination"></div>
       </div>
-      <div class="lunbo_center">
-          <img src="./images/lunbo/dog.jpg" alt="">
-        </div>
-      <div class="index_nav">
-        <ul  class="index_ul">
-          <li>
-            <a href="javascript:;">
-              <img src="./images/a.jpg" alt="">
-          </a>
-          </li>
-          <li>
-            <a href="javascript:;">
-            <img src="./images/b.jpg" alt="">
-          </a>
-          </li>
-          <li>
-            <a href="javascript:;">
-            <img src="./images/a.jpg" alt="">
-          </a>
-          </li>
-          <li>
-            <a href="javascript:;">
-              <img src="./images/a.jpg" alt="">
-            </a>
-          </li>
-          <li><a href="javascript:;">
-            <img src="./images/b.jpg" alt="">
-          </a>
-          </li>
-          <li><a href="javascript:;">
-            <img src="./images/a.jpg" alt="">
-          </a>
-          </li>
-          <li>
-            <a href="javascript:;">
-              <img src="./images/a.jpg" alt="">
-            </a>
-          </li>
-          <li><a href="javascript:;">
-            <img src="./images/b.jpg" alt="">
-          </a>
-          </li>
-          <li><a href="javascript:;">
-            <img src="./images/a.jpg" alt="">
-          </a>
-          </li>
-          <li>
-            <a href="javascript:;">
-              <img src="./images/a.jpg" alt="">
-            </a>
-          </li>
-        </ul>
-      </div>
-      </div>
-        <div class="crazy_buy">
-        <div class="crazy_img">
-          <img src="./images/crazy.jpg" alt="">
-           </div>
+      <div class="main">
+        <div class="index_content">
+          <div class="content" >
 
-         <div class="crazy_item">
-           <img src="./images/crazy_one.png" alt="" width="85">
-           <div class="crazy_center">
-              <div class="one">
-             <span>本场结束</span>
-              <span>时间显示</span>
+            <Lunbo/>
+
+            <div class="crazy_buy">
+              <div class="crazy_img"  v-if="imgmoudle[0]">
+                <img :src="imgmoudle[0].value[0].image" >
               </div>
-
-           <div class="more">
-             <span>更多</span>
-             <span class="iconfont icon-xinxi"></span>
-           </div>
-           </div>
-         </div>
-          <div class="crazy_content  ">
-            <ul>
-              <li class="content_imgs">
-                <a href="javascript:;">
-                  <span><img src="./images/f.jpg" alt="" class="img_li"></span>
-                  <div>¥4.8</div>
-                  <div>省¥43.2</div>
-              </a></li>
-              <li class="content_imgs">
-                <a href="javascript:;">
-                  <span><img src="./images/f.jpg" alt="" class="img_li"></span>
-                  <div>¥4.8</div>
-                  <div>省¥43.2</div>
-                </a></li>
-              <li class="content_imgs">
-                <a href="javascript:;">
-                  <span><img src="./images/f.jpg" alt="" class="img_li"></span>
-                  <div>¥4.8</div>
-                  <div>省¥43.2</div>
-                </a></li>
-              <li class="content_imgs">
-                <a href="javascript:;">
-                  <span><img src="./images/f.jpg" alt="" class="img_li"></span>
-                  <div>¥4.8</div>
-                  <div>省¥43.2</div>
-                </a></li>
-              <li class="content_imgs">
-                <a href="javascript:;">
-                  <span><img src="./images/f.jpg" alt="" class="img_li"></span>
-                  <div>¥4.8</div>
-                  <div>省¥43.2</div>
-                </a></li>
-              <li class="content_imgs">
-                <a href="javascript:;">
-                  <span><img src="./images/f.jpg" alt="" class="img_li"></span>
-                  <div>¥4.8</div>
-                  <div>省¥43.2</div>
-                </a></li>
-              <li class="content_imgs">
-                <a href="javascript:;">
-                  <span><img src="./images/f.jpg" alt="" class="img_li"></span>
-                  <div>¥4.8</div>
-                  <div>省¥43.2</div>
-                </a></li>
-              <li class="content_imgs">
-                <a href="javascript:;">
-                  <span><img src="./images/f.jpg" alt="" class="img_li"></span>
-                  <div>¥4.8</div>
-                  <div>省¥43.2</div>
-                </a></li>
-
-            </ul>
-          </div>
-        </div>
-        <div class="fuwu">
-             <div class="fuwu_img">
-               <img src="./images/crazy.jpg" alt="">
-             </div>
-             <div class="fuwu_gif">
-               <img src="./images/g.gif" alt="">
-             </div>
-
-           </div>
-         <div class="zunxi">
-           <div class="zunxi_img">
-             <img src="./images/crazy.jpg" alt="">
-           </div>
-           <div class="zunxi_nav">
-             <ul>
-               <li>
-                 <a href="javascript:;">
-                   <img src="./images/h.jpg" alt="">
-                 </a>
-               </li>
-               <li>
-                 <a href="javascript:;">
-                   <img src="./images/h.jpg" alt="">
-                 </a>
-               </li>
-               <li>
-                 <a href="javascript:;">
-                   <img src="./images/h.jpg" alt="">
-                 </a>
-               </li>
-               <li>
-                 <a href="javascript:;">
-                   <img src="./images/h.jpg" alt="">
-                 </a>
-               </li>
-
-             </ul>
-           </div>
-
-         </div>
-         <div class="dapai">
-           <div class="dapai_img">
-             <img src="./images/crazy.jpg" alt="">
-           </div>
-           <div class="swiper-container">
-             <div class="swiper-wrapper">
-               <div class="swiper-slide">
-                 <a href="javascript:;">
-                   <img src="./images/lunbo/baolu.jpg" alt="">
-                 </a>
-               </div>
-               <div class="swiper-slide">
-                 <a href="javascript:;">
-                   <img src="./images/lunbo/tongzhi.jpg" alt="">
-                 </a>
-               </div>
-               <div class="swiper-slide">
-                 <a href="javascript:;">
-                   <img src="./images/lunbo/baolu.jpg" alt="">
-                 </a>
-               </div>
-               <div class="swiper-slide">
-                 <a href="javascript:;">
-                   <img src="./images/lunbo/tongzhi.jpg" alt="">
-                 </a>
-               </div>
-             </div>
-             <div class="swiper-pagination"></div>
-           </div>
-         </div>
-         <div class="haohuo">
-           <div class="haohuo_img">
-             <img src="./images/crazy.jpg" alt="">
-           </div>
-            <ul class="haohuo_nav">
-              <li>
-                <a href="javascript">
-                <img src="./images/j.jpg" alt="">
-                </a>
-              </li>
-              <li>
-                <a href="javascript">
-                <img src="./images/j.jpg" alt="">
-                </a>
-              </li>
-              <li>
-                <a href="javascript">
-                <img src="./images/j.jpg" alt="">
-                </a>
-              </li>
-              <li>
-                <a href="javascript">
-                <img src="./images/j.jpg" alt="">
-                </a>
-              </li>
-              <li>
-                <a href="javascript">
-                <img src="./images/j.jpg" alt="">
-                </a>
-              </li>
-              <li>
-                <a href="javascript">
-                <img src="./images/j.jpg" alt="">
-                </a>
-              </li>
-              <li>
-                <a href="javascript">
-                <img src="./images/j.jpg" alt="">
-                </a>
-              </li>
-              <li>
-                <a href="javascript">
-                <img src="./images/j.jpg" alt="">
-                </a>
-              </li>
-              <li>
-                <a href="javascript">
-                <img src="./images/j.jpg" alt="">
-                </a>
-              </li>
-              <li>
-                <a href="javascript">
-                <img src="./images/j.jpg" alt="">
-                </a>
-              </li>
-              <li>
-                <a href="javascript">
-                <img src="./images/j.jpg" alt="">
-                </a>
-              </li>
-              <li>
-                <a href="javascript">
-                <img src="./images/j.jpg" alt="">
-                </a>
-              </li>
-              <li>
-                <a href="javascript">
-                <img src="./images/j.jpg" alt="">
-                </a>
-              </li>
-              <li>
-                <a href="javascript">
-                <img src="./images/j.jpg" alt="">
-                </a>
-              </li>
-            </ul>
-
-         </div>
-         <div class="badgod">
-            <div class="badgod_img">
-              <a href="javascript">
-                <img src="./images/crazy.jpg" alt="">
-              </a>
-            </div>
-             <div class="badgod_img2">
-               <a href="javascript:;">
-                 <img src="./images/k.jpg" alt="">
-               </a>
-             </div>
-
-         </div>
-         <div class="global">
-           <div class="global_img">
-             <a href="javascript:;">
-               <img src="./images/crazy.jpg" alt="">
-             </a>
-           </div>
-            <div class="gloal_nav">
-               <div class="gloal_nav_img1">
-                 <img src="./images/w.jpg" alt="">
-               </div>
-                <div class="gloal_nav_right">
-                 <div class="gloal_img_right_1">
-                   <img src="./images/s.jpg" alt="">
-                 </div>
-                  <div class="gloal_img_right_1">
-                    <img src="./images/s.jpg" alt="">
+              <div class="crazy_item">
+                <img src="./images/crazy_one.png"  width="85">
+                <div class="crazy_center">
+                  <div class="one" v-if="crazybuy[0]">
+                    <span>{{crazybuy[0].title}}</span>
+                    <span>21:00</span>
+                  </div>
+                  <div class="more">
+                    <span>更多</span>
+                    <span class="iconfont icon-xinxi"></span>
                   </div>
                 </div>
-            </div>
-         </div>
-         <div class="tese">
-           <div class="tese_img">
-             <img src="./images/crazy.jpg" alt="">
-           </div>
-            <ul class="test_nav">
-              <li>
-                <a href="javascript:;">
-                  <img src="./images/q.jpg" alt="">
-                </a>
-              </li>
-              <li>
-                <a href="javascript:;">
-                  <img src="./images/q.jpg" alt="">
-                </a>
-              </li>
-              <li>
-                <a href="javascript:;">
-                  <img src="./images/q.jpg" alt="">
-                </a>
-              </li>
-              <li>
-                <a href="javascript:;">
-                  <img src="./images/q.jpg" alt="">
-                </a>
-              </li>
-              <li>
-                <a href="javascript:;">
-                  <img src="./images/q.jpg" alt="">
-                </a>
-              </li>
-              <li>
-                <a href="javascript:;">
-                  <img src="./images/q.jpg" alt="">
-                </a>
-              </li>
-            </ul>
-         </div>
-          <div class="footer_desc">
-            <div class="footer_desc1">
-              <a href="javascript:;" class="on">触屏版</a>
-              <a href="javascript:;">手机客户端</a>
-              <a href="javascript:;">关于我们</a>
-              <a href="javascript:;">联系我们</a>
-            </div>
-            <div class="footer_desc2"> wap.epet.com 版权:重庆易宠科技有限公司</div>
-          </div>
+              </div>
+              <div class="crazy_content " v-if="crazybuy[0]">
+                <ul>
+                  <li class="content_imgs" v-for="(good ,index) in crazybuy[0].goods" :key="index">
+                    <a href="javascript:;">
+                  <span>
+                    <img :src="good.image.image" class="img_li">
+                  </span>
+                      <div>¥{{good.sale_price}}</div>
+                      <div>{{good.little_price}}</div>
+                    </a>
+                  </li>
 
-      </div>
+                </ul>
+              </div>
+            </div>
+
+            <Quiete :gif="moudle2[1]" :head="moudle2[0]" v-if="moudle2[0]"/>
+
+
+            <!--抽取数据区域-->
+            <List v-if="moudleListIimg.listOne" :img="moudleheaderimg[0]" :list="moudleListIimg.listOne" />
+
+            <ListLong v-if="moudleListIimg.listTwo" :img="moudleheaderimg[1]" :list="moudleListIimg.listTwo"/>
+
+            <Quiete :gif="moudle2[3]" :head="moudle2[2]" v-if="moudle2[0]"/>
+            <list v-if="moudleListIimg.listThree" :img="moudleheaderimg[2]" :list="moudleListIimg.listThree"/>
+            <list v-if="moudleListIimg.listFour" :img="moudleheaderimg[3]" :list="moudleListIimg.listFour"/>
+            <div class="footer_desc">
+              <div class="footer_desc1">
+                <a href="javascript:;" class="on">触屏版</a>
+                <a href="javascript:;">手机客户端</a>
+                <a href="javascript:;">关于我们</a>
+                <a href="javascript:;">联系我们</a>
+              </div>
+              <div class="footer_desc2"> wap.epet.com 版权:重庆易宠科技有限公司</div>
+            </div>
+
+          </div>
+        </div>
       </div>
     </div>
     </div>
@@ -419,9 +92,45 @@
   import Swiper from 'swiper'
   import BScroll from 'better-scroll'
   import 'swiper/dist/css/swiper.min.css'
+  import {mapState} from 'vuex'
+  import Lunbo from '../../components/lunbo/lunbo.vue'
+  import List from '../../components/List/list.vue'
+  import ListLong from '../../components/ListLong/Listlong.vue'
+  import Quiete from '../../components/jingtai/Queite.vue'
   export default {
+     data(){
+       return{
+        num:0,
+         show:false,
+       }
+     },
 
+    components:{
+      Lunbo,
+      List,
+      ListLong,
+      Quiete
+     },
+    computed:{
+      ...mapState(['menus','imgmoudle','crazybuy','moudle2','moudleheaderimg','moudleListIimg']),
+    },
     mounted(){
+      // 头部导航
+      this.$store.dispatch('getmeuns',()=>{
+        this.$nextTick(()=>{ //页面更新完以后显示滑动
+          if(!this.scroll2){
+            this.scroll2 = new BScroll('.index_search',{
+              click :true,
+              scrollX :true
+            })
+          }else{
+            this.scroll2.refresh()
+          }
+        })
+
+      })
+     // 显示模板图片
+      this.$store.dispatch('getmoudleimg')
       let swiper = new Swiper('.swiper-container', {
         autoplay: {
           delay: 1500,
@@ -432,37 +141,51 @@
           el: '.swiper-pagination'
         }
       })
-      if(!this.scroll2){
-        this.scroll2 = new BScroll('.index_search',{
-          click :true,
-          scrollX :true
+     // 获取疯抢模板
+      this.$store.dispatch('getcrazybuy',()=>{
+         this.$nextTick(()=>{
+           if(!this.scroll3){
+             this.scroll3 =  new BScroll('.crazy_content',{
+               click :true,
+               scrollX :true,
+               probeType:2
 
-        })
-      }else{
-        this.scroll2.refresh()
-      }
-
-      if(!this.scroll){
-        this.scroll =  new BScroll('.index_content',{
-          click :true
-        })
-      }else{
-        this.scroll.refresh()
-      }
-      if(!this.scroll3){
-        this.scroll3 =  new BScroll('.crazy_content',{
-          click :true,
-          scrollX :true,
-          probeType:2
-
-        })
-      }else{
-        this.scroll3.refresh()
-      }
+             })
+           }else{
+             this.scroll3.refresh()
+           }
+         })
+      })
+     // 处理品牌力量模块
+      this.$store.dispatch('getmoudle2')
+    //处理头部图片
+      this.$store.dispatch('getHeaaderImgs')
+//     处理列表list
+      this.$store.dispatch('getListImg')
 
 
+
+      setTimeout(()=>{
+        this.show = true;
+        if(!this.scroll){
+          this.scroll =  new BScroll('.index_content',{
+            click :true
+          })
+        }else{
+          this.scroll.refresh()
+        }
+      },20)
+
+    },
+    methods:{
+      high11(index){
+        alert(index)
+        this.num = index
+
+      },
     }
   }
+
 
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
@@ -514,11 +237,8 @@
               >a
                 color #666
               .on
-                color green
-                border-bottom  1px solid green
-
-
-
+                  color green
+                  border-bottom  1px solid green
     .main
       height 100%
       width 100%
@@ -529,33 +249,7 @@
          top 78px
          bottom 50px
          .content
-           .index_lunbo
-            .swiper-container
-              width 100%
-              .swiper-wrapper
-                width 100%
-                .swiper-slide
-                  width 100%
-                  >a
-                    >img
-                      width 100%
-                      display block
-            .lunbo_center
-              img
-                width 100%
-                display block
-            .index_nav
-              width 100%
-            .index_ul
-              width 100%
-              overflow hidden
-              >li
-                width 20%
-                float left
-                >a
-                  >img
-                    width 100%
-                    display block
+
            .crazy_buy
               .crazy_img
                 >img
@@ -585,34 +279,13 @@
                        text-align center
                        font-size 12px
                        .img_li
-                        width 100%
+                        width 70%
 
 
 
 
 
-           .fuwu
-             margin-top 10px
-             img
-              width 100%
-              display block
 
-           .zunxi
-              width 100%
-              .zunxi_img
-                >img
-                  width 100%
-
-              .zunxi_nav
-                >ul
-                  overflow hidden
-                  width 100%
-                  >li
-                    width 50%
-                    float left
-                    >a
-                     >img
-                       width 100%
            .dapai
               width 100%
               .dapai_img

@@ -20,11 +20,16 @@ javascript:;<template>
             <span>商品分类</span>
           </a></li>
           <li><a href="javascript:;">
-            <span class="iconfont icon-gouwuche2"></span>
+            <span class="iconfont icon-gouwuche2 total" >
+
+              <span class="cricle">
+                <span class="num">0</span>
+              </span>
+            </span>
             <span>购物车</span>
           </a></li>
           <li><a href="javascript:;">
-            <span class="iconfont icon-dongwutubiao-xianxing-gou"></span>
+            <span class="iconfont icon-gougou"></span>
             <span>我的e宠</span>
           </a></li>
 
@@ -112,9 +117,26 @@ javascript:;<template>
               flex-direction column
               justify-content space-around
               align-items center
-              span
-               .iconfont
-                 font-size 20px
+              font-size 14px
+              color #333
+              .iconfont
+                 font-size 24px
                  margin 5px 0
-
+              .total
+                position relative
+                .cricle
+                  width 17px
+                  height 17px
+                  border-radius 50%
+                  background red
+                  display inline-block
+                  position absolute
+                  right -7px
+                  top -6px
+                  .num
+                    font-size 12px
+                    color #ffffff
+                    position absolute
+                    left 5px
+                    top  2px
 </style>
