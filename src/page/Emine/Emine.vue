@@ -82,17 +82,15 @@
               padding 15px 0
               .iconfont
                 font-size 20px
+              input::-webkit-input-placeholder
+                color #ccc
               .input_2
                  color #ccc
                  outline none
-
-
-
           .input_p
             font-size 14px
             text-align right
             margin 10px 0
-
           .input_btn
             background-color #2ec975
             color #ffffff
