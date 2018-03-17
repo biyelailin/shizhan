@@ -7,6 +7,8 @@ import  Msite from '../page/Msite/Msite.vue'
 import  Search from '../page/Search/Search.vue'
 import  Gshop from '../page/Gshop/Gshop.vue'
 import  Emine from '../page/Emine/Emine.vue'
+import Fenlei from '../page/Search/fenlei/fenlei.vue'
+import Pinpai from '../page/Search/pinpai/pinpai.vue'
 //注册路由
  Vue.use(VueRouter)
 
@@ -19,7 +21,25 @@ export  default  new VueRouter({
       },
       {
         path:'/search',
-        component:Search
+        component:Search,
+        children:[
+          {
+            path:'fenlei',
+            component:Fenlei
+          },
+          {
+            path:'pinpai',
+            component:Pinpai
+          },
+          {
+            path:'',
+            redirect:'fenlei'
+
+          }
+
+
+
+        ]
 
       },
       {
@@ -37,6 +57,6 @@ export  default  new VueRouter({
         redirect:'/msite'
 
       }
-    ]
-
+    ],
+  linkActiveClass: 'active'
 })

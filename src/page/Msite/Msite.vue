@@ -24,14 +24,14 @@
         <div class="index_content">
           <div class="content" >
 
-            <Lunbo/>
+            <Lunbo  :lunbo="lunbo[0]" :bigimg="bigimg" :navimg="navimg" v-if="lunbo[0]"/>
 
             <div class="crazy_buy">
               <div class="crazy_img"  v-if="imgmoudle[0]">
                 <img :src="imgmoudle[0].value[0].image" >
               </div>
               <div class="crazy_item">
-                <img src="./images/crazy_one.png"  width="85">
+                <img src="./images/aa.png"  width="85">
                 <div class="crazy_center">
                   <div class="one" v-if="crazybuy[0]">
                     <span>{{crazybuy[0].title}}</span>
@@ -64,6 +64,7 @@
 
             <!--抽取数据区域-->
             <List v-if="moudleListIimg.listOne" :img="moudleheaderimg[0]" :list="moudleListIimg.listOne" />
+            <SmallScroll :imgs="lunbo[1]" :taggleImg="lunbo[2]" v-if="lunbo[1]"/>
 
             <ListLong v-if="moudleListIimg.listTwo" :img="moudleheaderimg[1]" :list="moudleListIimg.listTwo"/>
 
@@ -97,6 +98,7 @@
   import List from '../../components/List/list.vue'
   import ListLong from '../../components/ListLong/Listlong.vue'
   import Quiete from '../../components/jingtai/Queite.vue'
+  import SmallScroll from '../../components/smallScroll/smallScroll.vue'
   export default {
      data(){
        return{
@@ -109,10 +111,11 @@
       Lunbo,
       List,
       ListLong,
-      Quiete
+      Quiete,
+      SmallScroll
      },
     computed:{
-      ...mapState(['menus','imgmoudle','crazybuy','moudle2','moudleheaderimg','moudleListIimg']),
+      ...mapState(['menus','imgmoudle','crazybuy','moudle2','moudleheaderimg','moudleListIimg','lunbo','bigimg','navimg']),
     },
     mounted(){
       // 头部导航
@@ -162,6 +165,23 @@
       this.$store.dispatch('getHeaaderImgs')
 //     处理列表list
       this.$store.dispatch('getListImg')
+//      轮播图
+      this.$store.dispatch('reqLunbo',()=>{
+        this.$nextTick(()=>{
+          let swiper = new Swiper('.swiper-container', {
+            autoplay: {
+              delay: 1500,
+              disableOnInteraction: false,
+            },
+            loop: true,
+            pagination: {
+              el: '.swiper-pagination'
+            }
+          })
+        })
+      }),
+        this.$store.dispatch('reqbigimg'),
+        this.$store.dispatch('reqnavimg')
 
 
 
