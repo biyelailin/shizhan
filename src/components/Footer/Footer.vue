@@ -31,7 +31,7 @@
   export default {
     methods:{
       goto(url){
-        this.$router.replace(url)
+        this.$router.push(url)
       }
     }
   }

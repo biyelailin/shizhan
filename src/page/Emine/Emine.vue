@@ -16,14 +16,14 @@
            <div class="jiantou">
 
            </div>
-        <form>
+        <form @submit.prevent="Login">
           <div class="input_1">
             <span class="iconfont icon-touxaing"></span>
-          <input type="text" placeholder="手机/邮箱/用户名" class="input_2">
+          <input type="text" placeholder="邮箱/用户名" class="input_2" v-model="name">
           </div>
           <div class="input_1">
             <span class="iconfont icon-jiami"></span>
-          <input type="password" placeholder="输入密码">
+          <input type="password" placeholder="输入密码" v-model="pwd">
            </div>
            <p class="input_p">忘记密码</p>
            <button class="input_btn">登陆</button>
@@ -33,20 +33,21 @@
         <div class="right"  v-show="!isShow">
           <div class="jiantou1">
           </div>
-          <form>
+          <form @submit.prevent="Login">
             <div class="input_1">
               <span class="iconfont icon-touxaing"></span>
-              <input type="text" placeholder="已注册手机号" class="input_2">
+              <input type="text"  maxlength="11" placeholder="已注册手机号" class="input_2" v-model="phone">
             </div>
             <div class="input_1">
               <span class="iconfont icon-jiami"></span>
-              <input type="password" placeholder="请输入图片内容" class="input_2">
-              <img src="./images/code.png" >
+              <input type="password" placeholder="请输入图片内容" class="input_2" v-model="captcha">
+              <img  style="width:100px" src="http://localhost:3000/captcha" @click="getCaptcha">
             </div>
             <div class="input_1">
               <span class="iconfont icon-jiami"></span>
-              <input type="password" placeholder="输入密码" class="input_2">
-              <a href="javascript:;" class="getcode">获取动态验证码</a>
+              <input type="password"  placeholder="输入密码" class="input_2"  v-model="code">
+              <button class="getcode" :class="{on:showTel}" v-show="!showTime" @click.prevent="getMsg">获取动态验证码</button>
+              <button disabled="disabled" class="getcode" v-show="showTime">{{showTime}}s</button>
             </div>
             <p class="input_p">忘记密码</p>
             <button class="input_btn">登陆</button>
@@ -63,19 +64,126 @@
       </div>
     </div>
   </div>
+    <!--这里是提示框-->
+    <AlertTip :alertText="alertText" @alterTip="alterTips" v-show="alterTip"/>
   </div>
 </template>
 <script>
+  /*1.前台验证输入的信息是否正确
+    手机端：
+      对手机号的验证，要满足11位并且是1开头的
+      获得手机验证码，是六位，通过发送请求验证码请求，返回验证码，在通过发送异步请求通过数据库的验证‘
+    用户登录
+      要异步获取图片验证信息，在通过发送异步请求，数据库进行验证
+    2.前提
+      先要判断是手机登陆还是用户登录
+      1.
+  * */
+  import AlertTip from '../../components/AlertTip/AlertTip.vue'
+  import {phoneCode,msmCode,LoginCode} from '../../api/index'
   export default {
      data(){
        return{
-         isShow:true
+         isShow:true,
+         phone:'' ,//获取手机号,
+         code:'',//获取的手机验证码
+         captcha:'',//图片验证码
+         showTime:0, //倒计时时间
+
+         name:'',
+         pwd:'',
+
+         alterTip:false, //这里是判断提示框显示，默认是不显示
+         alertText:'',  //这是提示的信息
        }
      },
+    computed:{
+       showTel(){
+          let {phone,captcha} = this
+         return /^1\d{10}$/.test(phone) && captcha
+       }
+    },
     methods:{
       handle(val){
         this.isShow = val
+      },
+      alterTips(){
+        this.alterTip = false
+      },
+   //执行倒计时
+     async getMsg(){
+       let timeId
+       //  必须在正确获得手机号和图片验证码后才可以点击
+       let {showTel, phone} = this
+       if (showTel) {
+         this.showTime = 60
+
+         timeId = setInterval(() => {
+           this.showTime--
+           if (this.showTime === 0) {
+             clearInterval(timeId)
+           }
+         }, 1000)
+       }
+//        发送异步请求获取code
+       let result = await msmCode(phone)
+
+       if (result.code === 1) {
+         clearInterval(timeId)
+         this.alterTip = true
+         this.alertText = result.msg
+       }
+     },
+//      获取图片验证码
+      getCaptcha(event){
+        event.target.src ='http://localhost:3000/captcha?time='+ new Date()
+      },
+     async  Login(){
+         let result
+        let {name,pwd ,phone,code,captcha,showTel} = this
+        if(!this.isShow){//先判断手机登陆
+       // 1.前台验证是否合法
+           if(!this.showTel){
+              this.alterTip =true
+              this.alertText='请输入正确的手机号和验证码'
+             return
+           }else if(!/\d{6}$/.test(code)){
+             this.alterTip =true
+             this.alertText='请输入正确的验证码'
+             return
+           }
+//         2.发送异步请求
+             result = await phoneCode({phone,code})
+            console.log(result)
+        }else {
+            if(!name){
+              this.alterTip =true
+              this.alertText='请输入用户名'
+              return
+
+            }else if(!pwd){
+              this.alterTip =true
+              this.alertText='请输入密码'
+              return
+            }
+      //2.发送异步请求
+           result = await LoginCode({name,pwd})
+
+        }
+//      3.处理请求后的信息
+          if(result.code===0){
+            this.$store.dispatch('userinfo',result.data)
+            this.$router.push('/msite')
+          }else {
+            this.alterTip =true
+            this.alertText=result.msg
+            return
+          }
+
       }
+    },
+    components:{
+      AlertTip
     }
   }
 </script>
@@ -181,6 +289,10 @@
                  font-size 12px
                  padding 8px
                  border-radius 5px
+                 background #ffffff
+
+              .on
+                 color #000
             .input_p
               font-size 14px
               text-align right
