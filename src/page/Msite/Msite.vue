@@ -85,6 +85,7 @@
         </div>
       </div>
     </div>
+    <div class="mindog"></div>
     </div>
 
 
@@ -92,7 +93,7 @@
 <script>
   import Swiper from 'swiper'
   import BScroll from 'better-scroll'
-  import 'swiper/dist/css/swiper.min.css'
+  import 'swiper/dist/css/swiper.css'
   import {mapState} from 'vuex'
   import Lunbo from '../../components/lunbo/lunbo.vue'
   import List from '../../components/List/list.vue'
@@ -102,10 +103,17 @@
   export default {
      data(){
        return{
-        num:0,
+         num:0,
          show:false,
        }
      },
+    methods:{
+      high11(index){
+        console.log(index)
+        this.num = index
+
+      },
+    },
 
     components:{
       Lunbo,
@@ -134,7 +142,7 @@
       })
      // 显示模板图片
       this.$store.dispatch('getmoudleimg')
-      let swiper = new Swiper('.swiper-container', {
+    let swiper = new Swiper('.swiper-container', {
         autoplay: {
           delay: 1500,
           disableOnInteraction: false,
@@ -197,13 +205,7 @@
       },20)
 
     },
-    methods:{
-      high11(index){
-        alert(index)
-        this.num = index
 
-      },
-    }
   }
 
 
@@ -398,5 +400,22 @@
                       color red
                  .footer_desc2
                     font-size 12px
+
+    .mindog
+      position absolute
+      right 0
+      bottom 70px
+      width 47px
+      height 47px
+      background url("./images/gocat.png") no-repeat
+      background-position 0 0
+      background-size 200%
+      animation  dog 2s steps(1,end) infinite
+      @keyframes dog
+        50%
+         background-position -47px 0
+
+
+
 
 </style>

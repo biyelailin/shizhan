@@ -4,11 +4,12 @@ javascript:;<template>
       <div class="gouwu_top  border-1px">
         <span class="iconfont icon-jiantou3"></span>
         <span >购物车</span>
-        <span >
-          <img src="./images/imgtk-new.png" alt="">
+        <span @click="HideorShow" >
+          <img src="./images/imgtk-new.png" >
         </span>
       </div>
-      <div class="gouwu_hide ">
+      <transition name="hide">
+      <div class="gouwu_hide " v-show="isShow" >
         <ul class=" gouwu_hide_nav border-1p">
           <li><a href="javascript:;">
             <span class="iconfont icon-shouye"></span>
@@ -35,6 +36,7 @@ javascript:;<template>
 
         </ul>
       </div>
+      </transition>
       <div class="gouwu_content">
          <div class="gouwu_con1">
            <div class="gouwu_img"></div>
@@ -50,7 +52,18 @@ javascript:;<template>
   </div>
 </template>
 <script>
-  export default {}
+  export default {
+    data(){
+      return{
+        isShow:false
+      }
+    },
+    methods:{
+      HideorShow(){
+        this.isShow = !this.isShow
+      }
+    }
+  }
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
   @import "../../common/styuls/minxis.styl"
@@ -101,7 +114,12 @@ javascript:;<template>
             margin 0 5px
 
 
-      .gouwu_hide
+      .hide-enter-active,hide-leave-active
+        transition  height 1s
+      .fade-leave-to
+         heigth 50px
+      .fade-enter
+          height 0px
         .gouwu_hide_nav
            bottom-border-1px(#ccc)
            overflow hidden

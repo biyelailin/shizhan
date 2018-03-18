@@ -7,7 +7,7 @@
       </span>
       <span>首页</span>
     </span>
-    <span class="guide_item" :class="{on:$route.path=='/search'}" @click="goto('/search')" >
+    <span class="guide_item" :class="{on:$route.path=='/search/fenlei'}" @click="goto('/search'||'/search/fenlei')" >
       <span class="item_icon">
         <i class="iconfont icon-sousuo"></i>
       </span>
