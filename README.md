@@ -28,4 +28,14 @@
              color #ccc
      4.分类页面数据展现：其中mock返回分类的数据，是一个二维数组，在遍历时取数据时，
        要通过v-if 来一层层判断是否有值
+### 5.第五天
+     1.通过npm i vue-lazyload --save 下载图片懒加载，在main.js中进行配置，通过
+      Vue.use(VueLazyload, {
+        loading
+      })
+      在页面中对<img v-lazy=""/>进行修改
+      2.使底部导航栏隐藏，通过配置router的meta：{} ，给底部导航加上$router.meta.xxx
+      3.要对后台数据分析，在对组件分类和显示
+      4.  <link rel="shortcut icon" type="image/x-icon" href="//static.epetbar.com/favicon.ico"> 添加小的icon
+
 

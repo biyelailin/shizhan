@@ -15,21 +15,34 @@ import Pinpai from '../page/Search/pinpai/pinpai.vue'
 export  default  new VueRouter({
     routes:[
       {
-        path:'/msite',
-        component:Msite
+       path:'/msite',
+        component:Msite,
+        meta:{
+         footerShow:true
+        }
+
 
       },
       {
         path:'/search',
         component:Search,
+        meta:{
+          footerShow:true
+        },
         children:[
           {
             path:'fenlei',
-            component:Fenlei
+            component:Fenlei,
+            meta:{
+              footerShow:true
+            },
           },
           {
             path:'pinpai',
-            component:Pinpai
+            component:Pinpai,
+            meta:{
+              footerShow:true
+            },
           },
           {
             path:'',
